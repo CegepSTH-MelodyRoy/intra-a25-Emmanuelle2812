@@ -6,8 +6,9 @@ import random
 temperature= round(random.uniform(20,35),1)
 def question_1(temperature):
     for i in range(1,11):
+        temperature = round(random.uniform(20, 35), 1)
         print("Jour",i,":",temperature)
-        if temperature>=24 or temperature<=30:
+        if temperature>=24 and temperature<=30 :
             print("OK")
         elif temperature <24:
             print("Trop froid")
@@ -17,8 +18,7 @@ def question_1(temperature):
 
 #appel de la fonction
 question_1(temperature)
-#la fonction devrait avoir dix températures différentes, mais la mienne affiche 10 fois la même
-#je ne comprends pas pourquoi le message est toujours OK, même si je l'ai mis dans un if/elif/else
+
 
 import random
 import matplotlib.pyplot as plt
@@ -34,7 +34,7 @@ def question_2(population_initiale):
         print(population_initiale)
         plt.figure(figsize=(2, 2))
         plt.plot(heures, population_initiale, marker='*',color='blue')
-        plt.plot([0, 10], [50000], linestyle='--',color='red')
+        plt.plot(population_initiale=50000, linestyle='--',color='red')
         plt.xlabel("heures")
         plt.ylabel("population")
         plt.title("Croissance bactérienne")
@@ -42,3 +42,4 @@ def question_2(population_initiale):
         plt.show()
 
 question_2(population_initiale)
+#à chaque fois que l'heure augmente de 1, on ajoute np.pi/1.5 à la quantité initiale de la population
